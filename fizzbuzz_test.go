@@ -2,12 +2,22 @@ package fizzbuzz
 
 import "testing"
 
+type testFizz struct {
+	name string
+	input int
+	want string
+}
+
 func TestFizzBuzz(t *testing.T) {
-	want := "1"
 
-	got := FizzBuzz(1)
+	 tf := []testFizz{
+		 {name : "should 1 get 1",input: 1,want : "1"},
+	 }
 
-	if got != want {
-		t.Errorf("FizzBuzz(1) = %q, want %q", got, want)
+	for _ , v := range tf{
+		get := FizzBuzz(v.input)
+		if v.want != get {
+			t.Errorf("Err want %v get %v",v.want,get)
+		}
 	}
 }
