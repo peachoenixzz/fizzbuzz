@@ -2,8 +2,15 @@ package fizzbuzz
 
 import "fmt"
 
-func FizzBuzz(n int) string{
-	if n%3 ==0 && n%5 ==0{
+func isFizzBuzz(n int) bool {
+	if n%3 == 0 && n%5 == 0 {
+		return true
+	}
+	return false
+}
+
+func FizzBuzz(n int) string {
+	if isFizzBuzz(n) {
 		return "FizzBuzz"
 	}
 
@@ -11,9 +18,9 @@ func FizzBuzz(n int) string{
 		return "Fizz"
 	}
 
-	if n%5 == 0{
+	if n%5 == 0 {
 		return "Buzz"
 	}
 
-	return fmt.Sprintf("%v",n)
+	return fmt.Sprintf("%v", n)
 }
